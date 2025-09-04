@@ -6,61 +6,221 @@
     <title>Phonz's Meme Gallery</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">
+            <div class="logo-shape"></div>
+            <div class="logo-text">PHONZ</div>
+        </div>
+        <div class="preloader-progress">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="preloader-status">Initializing...</div>
+    </div>
+
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loader">
-            <div class="loader-circle"></div>
-            <div class="loader-text">Loading Awesome Content</div>
-            <div class="made-by">
-                <div class="phonz">MADE BY PHONZ</div>
+            <div class="loader-circle">
+                <div class="loader-icon"><i class="fas fa-rocket"></i></div>
+            </div>
+            <div class="loader-text">Preparing Your Meme Experience</div>
+            <div class="loader-subtext">Powered by Phonz Technology</div>
+            <div class="progress-container">
+                <div class="progress" id="loadingProgress"></div>
+            </div>
+            <div class="loading-stats">
+                <div class="stat">
+                    <span class="stat-value" id="memesLoaded">0</span>
+                    <span class="stat-label">Memes Ready</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="loadingSpeed">0</span>
+                    <span class="stat-label">MB/s</span>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <header>
-            <div class="header-content">
-                <h1 class="glitch" data-text="PHONZ MEME GALLERY">PHONZ MEME GALLERY</h1>
-                <p class="subtitle">EXCLUSIVE COLLECTION</p>
+    <!-- Main GUI -->
+    <div class="main-gui">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">P</div>
+                <span>Phonz</span>
             </div>
-            <div class="scroll-down">
-                <span>SCROLL</span>
-                <div class="mouse">
-                    <div class="wheel"></div>
+            <nav class="main-nav">
+                <ul>
+                    <li class="active" data-section="trending">
+                        <i class="fas fa-fire"></i>
+                        <span>Trending</span>
+                    </li>
+                    <li data-section="new">
+                        <i class="fas fa-star"></i>
+                        <span>New</span>
+                    </li>
+                    <li data-section="favorites">
+                        <i class="fas fa-heart"></i>
+                        <span>Favorites</span>
+                    </li>
+                    <li data-section="categories">
+                        <i class="fas fa-tags"></i>
+                        <span>Categories</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="user-panel">
+                <div class="user-avatar">P</div>
+                <div class="user-info">
+                    <div class="user-name">Phonz</div>
+                    <div class="user-status">Premium Member</div>
                 </div>
-                <div class="arrow"><span></span></div>
-            </div>
-        </header>
-
-        <div class="content-wrapper">
-            <div class="meme-container" id="memeContainer">
-                <!-- Memes will be loaded here by JavaScript -->
-            </div>
-
-            <div class="load-more">
-                <button id="loadMore" class="glow-on-hover">
-                    <span>LOAD MORE</span>
-                    <i class="fas fa-arrow-down"></i>
+                <button class="settings-btn">
+                    <i class="fas fa-cog"></i>
                 </button>
             </div>
-        </div>
+        </aside>
 
-        <footer>
-            <div class="footer-content">
-                <div class="footer-logo">PHONZ</div>
-                <div class="footer-text">EXCLUSIVE MEME GALLERY</div>
-                <div class="footer-copyright"> 2023 MADE BY PHONZ</div>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search memes...">
+                </div>
+                <div class="top-bar-actions">
+                    <button class="btn btn-notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="btn btn-upload">
+                        <i class="fas fa-upload"></i>
+                        <span>Upload</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Hero Section -->
+                <section class="hero">
+                    <div class="hero-content">
+                        <h1>Welcome to Phonz Meme Gallery</h1>
+                        <p>Discover the internet's best memes, curated just for you</p>
+                        <div class="hero-actions">
+                            <button class="btn btn-primary">
+                                <i class="fas fa-bolt"></i>
+                                <span>Explore Now</span>
+                            </button>
+                            <button class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Learn More</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="floating-meme">
+                            <img src="https://i.imgflip.com/1bgw.jpg" alt="Featured Meme">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Meme Grid -->
+                <section class="meme-grid-section">
+                    <div class="section-header">
+                        <h2>Trending Now</h2>
+                        <div class="view-all">View All <i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="meme-container" id="memeContainer">
+                        <!-- Memes will be loaded here by JavaScript -->
+                    </div>
+
+                    <div class="load-more">
+                        <button id="loadMore" class="btn btn-load-more">
+                            <span>Load More Memes</span>
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                </section>
             </div>
-        </footer>
+        </main>
     </div>
 
+    <!-- Notification System -->
+    <div class="notification-container" id="notificationContainer">
+        <!-- Notifications will be added here by JavaScript -->
+    </div>
+
+    <!-- Cursor Elements -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
+    <!-- Settings Panel (Hidden by default) -->
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header">
+            <h3>Settings</h3>
+            <button class="close-settings">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="settings-content">
+            <div class="setting-group">
+                <h4>Appearance</h4>
+                <div class="setting-option">
+                    <span>Dark Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-option">
+                    <span>Animation Level</span>
+                    <select>
+                        <option>High</option>
+                        <option>Medium</option>
+                        <option>Low</option>
+                        <option>Off</option>
+                    </select>
+                </div>
+            </div>
+            <div class="setting-group">
+                <h4>Content</h4>
+                <div class="setting-option">
+                    <span>Safe Mode</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="setting-option">
+                    <span>Auto-play GIFs</span>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="settings-footer">
+            <button class="btn btn-primary">Save Settings</button>
+            <button class="btn btn-text">Reset to Defaults</button>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="script.js"></script>
