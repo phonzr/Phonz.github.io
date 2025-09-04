@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome Website</title>
+    <title>Phonz Media Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">MySite</div>
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Phonz<span>Media</span></div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#videos">Videos</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
     </header>
@@ -28,29 +33,76 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Welcome to My Website</h1>
-                <p>Creating amazing experiences on the web</p>
-                <a href="#contact" class="cta-button">Get Started</a>
+                <h1 class="animate-text">Welcome to Phonz Media Hub</h1>
+                <p class="animate-text">Discover amazing content from around the web</p>
+                <a href="#videos" class="cta-button animate-text">Explore Videos</a>
+            </div>
+            <div class="scroll-down">
+                <span>Scroll Down</span>
+                <i class="fas fa-chevron-down"></i>
             </div>
         </section>
 
-        <section id="about" class="section">
-            <h2>About Me</h2>
+        <section id="videos" class="videos-section">
+            <h2>Featured Videos</h2>
+            <div class="video-grid" id="videoContainer">
+                <!-- Videos will be loaded here by JavaScript -->
+            </div>
+            <button id="loadMore" class="load-more">Load More</button>
+        </section>
+
+        <section id="about" class="about-section">
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Hello, I'm [Your Name]</h3>
-                    <p>I'm a passionate web developer with a love for creating beautiful, functional websites. With expertise in HTML, CSS, and JavaScript, I bring ideas to life on the web.</p>
-                </div>
-                <div class="skills">
-                    <div class="skill">HTML5</div>
-                    <div class="skill">CSS3</div>
-                    <div class="skill">JavaScript</div>
-                    <div class="skill">Responsive Design</div>
+                    <h2>About Phonz Media</h2>
+                    <p>Your premier destination for high-quality, copyright-free video content. Curated collection of amazing videos from various sources.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <i class="fas fa-video"></i>
+                            <h3>1000+</h3>
+                            <p>Videos</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users"></i>
+                            <h3>24/7</h3>
+                            <p>Available</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-heart"></i>
+                            <h3>100%</h3>
+                            <p>Free Content</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="section">
-            <h2>My Services</h2>
-            <div class="services-grid">
-                <div class="service
+        <section id="contact" class="contact-section">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Phonz<span>Media</span></div>
+            <p>© 2025 Made by Phonz. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
