@@ -21,7 +21,6 @@ const memeData = [
         url: "https://i.imgflip.com/24y43o.jpg"
     },
     {
-        id: 5,
         title: "Batman Slapping Robin",
         url: "https://i.imgflip.com/9ehk.jpg"
     },
